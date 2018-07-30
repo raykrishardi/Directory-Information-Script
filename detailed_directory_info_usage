@@ -1,0 +1,43 @@
+NAME:
+detailed_directory_info.sh
+
+DESCRIPTION:
+The script includes any hidden files/directories (except ".") and descends 1 level of directories below the command line arguments
+The script reports the following information which relates to the options (-fxld) given by the user:
+#1. Total number of ordinary (non-executable) files (-f)
+#2. Total number of executable files (-x)
+#3. Total number of links (-l)
+#4. Total number of directories (-d)
+
+SYNTAX:
+usage: detailed_directory_info.sh [-fxld] [directory_name...]
+
+OPTIONS:
+-f -- display only the count of ordinary files
+-x -- display only the count of executable files
+-l -- display only the count of links
+-d -- display only the count of directories
+
+EXAMPLES:
+$ detailed_directory_info.sh
+.: ordinary:10 executable:9 link:3 directory:5
+
+$ detailed_directory_info.sh dir1 dir2
+dir1: ordinary:2 executable:8 link:7 directory:32
+dir2: ordinary:8 executable:17 link:5 directory:16
+
+$ detailed_directory_info.sh dir1 dir2
+dir1: ordinary:2 executable:8 link:7 directory:32
+dir2: no such directory
+
+$ detailed_directory_info.sh dir1 dir2
+dir1: no such directory
+dir2: no such directory
+.: ordinary:10 executable:9 link:3 directory:5
+
+$ detailed_directory_info.sh -k
+detailed_directory_info: illegal option -k
+usage: detailed_directory_info.sh [-fxld] [directory_name...]
+
+$ detailed_directory_info.sh -xd dir1
+dir1: executable:8 directory:42
