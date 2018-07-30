@@ -1,0 +1,31 @@
+NAME:
+basic_directory_info.sh
+
+DESCRIPTION:
+The script accounts for any contents of nested subdirectories
+The script requires a single argument (must be a directory) and reports the following information while excluding any hidden files/directories:
+1. Total number of directories that are in the given directory
+2. Total number of files in all the directories starting from the given argument directory name
+3. Total number of files/directories in the given directory that are readable 
+4. Total number of files/directories in the given directory that are writable
+5. Total number of files/directories in the given directory that are executable
+
+SYNTAX:
+basic_directory_info.sh [directory_name]
+
+EXAMPLES:
+$ basic_directory_info.sh
+usage: basic_directory_info.sh [directory_name]
+
+$ basic_directory_info.sh dir1 dir2
+usage: basic_directory_info.sh [directory_name]
+
+$ basic_directory_info.sh dir1
+dir1: no such directory
+
+$ basic_directory_info.sh dir2
+number of directories: 1
+number of files: 1
+number of readable files/directories: 1
+number of writable files/directories: 1
+number of executable items: 1

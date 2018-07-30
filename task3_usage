@@ -1,0 +1,65 @@
+NAME:
+more_detailed_directory_info.sh
+
+DESCRIPTION:
+The script includes any hidden files/directories (except ".") and descend 1 level of directories below the command line arguments
+The script reports the following information which relates to the options (-fxldrs) given by the user:
+1. Total number of ordinary (non-executable) files (-f)
+2. Total number of executable files (-x)
+3. Total number of links (-l)
+4. Total number of directories (-d)
+5. Total number of the four types of file for all the subdirectories depending on the file types specified (-r)
+6. Total file space occupied including all the files and subdirectories (-s) in a human readable format (byte (B), kilobyte (K), megabyte (M), gigabyte (G), and terabyte (T))
+
+
+SYNTAX:
+more_detailed_directory_info.sh [-fxldrs] [directory_name...]
+
+OPTIONS:
+-f -- display only the count of ordinary files
+-x -- display only the count of executable files
+-l -- display only the count of links
+-d -- display only the count of directories
+-r -- display the counts of the four types of file for all the subdirectories depending on the file types specified
+-s -- display the total file space occupied including all the files and subdirectories in a human readable format (byte (B), kilobyte (K), megabyte (M), gigabyte (G), and terabyte (T))
+
+EXAMPLES:
+$ more_detailed_directory_info.sh
+.: ordinary:10 executable:9 link:3 directory:5
+
+$ more_detailed_directory_info.sh dir1 dir2
+dir1: ordinary:2 executable:8 link:7 directory:32
+dir2: ordinary:8 executable:17 link:5 directory:16
+
+$ more_detailed_directory_info.sh dir1 dir2
+dir1: ordinary:2 executable:8 link:7 directory:32
+dir2: no such directory
+
+$ more_detailed_directory_info.sh dir1 dir2
+dir1: no such directory
+dir2: no such directory
+.: ordinary:10 executable:9 link:3 directory:5
+
+$ more_detailed_directory_info.sh -k
+more_detailed_directory_info: illegal option -k
+usage: more_detailed_directory_info.sh [-fxldrs] [directory_name...]
+
+$ more_detailed_directory_info.sh -xd dir1
+dir1: executable:8 directory:42
+
+$ more_detailed_directory_info.sh -R
+more_detailed_directory_info: illegal option -R
+usage: more_detailed_directory_info.sh [-fxldrs] [directory_name ...]
+
+$ more_detailed_directory_info.sh -r dir1
+dir1: ordinary:8 executable:6 link:2 directory:2
+dir1_a: ordinary:4 executable:3 link:1 directory:0
+dir1_b: ordinary:10 executable:6 link:0 directory:1
+dir1b_a: ordinary:2 executable:0 link:0 directory:0
+
+$ more_detailed_directory_info.sh -s dir1 dir2
+dir1: ordinary:2 executable:8 link:7 directory:32 size:25M
+dir2: ordinary:8 executable:17 link:5 directory:16 size:648K
+
+$ more_detailed_directory_info.sh -xds dir1
+dir1: executable:8 directory:32 size:25M
