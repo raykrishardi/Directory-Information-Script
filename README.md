@@ -3,7 +3,7 @@
 # About the project:
 This project is my first assignment for the FIT2065 (Operating Systems and The Unix Environment) unit which contains 3 scripts that display information about a particular directory or directories depending on the options given by the user. The project contains the following scripts:
 
-## 1. basic_directory_info.sh (inc. help/usage file)
+## 1. basic_directory_info.sh 
 ### Description:
 - The script accounts for any contents of nested subdirectories
 - The script requires a single argument (must be a directory) and reports the following information while excluding any hidden files/directories:
@@ -33,7 +33,7 @@ This project is my first assignment for the FIT2065 (Operating Systems and The U
     number of writable files/directories: 1
     number of executable items: 1
     
-## 2. detailed_directory_info.sh (inc. help/usage file)
+## 2. detailed_directory_info.sh 
 ### Description:
 - The script includes any hidden files/directories (except ".") and descends 1 level of directories below the command line arguments
 - The script reports the following information which relates to the options (-fxld) given by the user:
@@ -75,7 +75,7 @@ This project is my first assignment for the FIT2065 (Operating Systems and The U
     $ detailed_directory_info.sh -xd dir1
     dir1: executable:8 directory:42
  
- ## 3. more_detailed_directory_info.sh (inc. help/usage file)
+ ## 3. more_detailed_directory_info.sh 
 ### Description:
 - The script includes any hidden files/directories (except ".") and descend 1 level of directories below the command line arguments
 - The script reports the following information which relates to the options (-fxldrs) given by the user:
