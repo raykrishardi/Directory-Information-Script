@@ -1,4 +1,4 @@
-# Bash Directory Information Scripts
+# Directory Information Scripts
 
 # About the project:
 This project is my first assignment for the FIT2065 (Operating Systems and The Unix Environment) unit which contains 3 scripts that display information about a particular directory or directories depending on the options given by the user. The project contains the following scripts:
